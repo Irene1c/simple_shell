@@ -26,6 +26,8 @@ int main(int argc, char **argv)
 		{
 			if (_strcmp(argv[0], "exit") == 0)
 			{
+				free(argv);
+				free(buf);
 				break;
 			}
 			else if (_strcmp(argv[0], "env") == 0)
