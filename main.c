@@ -23,6 +23,8 @@ int main(int argc, char **argv)
 		argv = _tokenize(buf);
 		if (argv[0] != NULL)
 		{
+			if (_strcmp(argv[0], "exit") == 0)
+				break;
 			_execute(argv);
 		}
 		free(argv);

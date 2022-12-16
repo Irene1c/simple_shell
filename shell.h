@@ -20,5 +20,11 @@ char *_strdup(char *str);
 char *_strcpy(char *dest, char *src);
 void handler(int sig);
 void _execute(char **argv);
+char *_strcat(char *dest, char *src);
+char *which_location(char *cmd);
+char *_getenv(const char *name);
+int match_variable(const char *varname, const char *pname);
+char *get_val(char *s);
+int _strcmp(char *s1, char *s2);
 
 #endif
