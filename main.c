@@ -24,7 +24,11 @@ int main(int argc, char **argv)
 		if (argv[0] != NULL)
 		{
 			if (_strcmp(argv[0], "exit") == 0)
-				break;
+			{
+				free(argv);
+				free(buf);
+				exit(0);
+			}
 			_execute(argv);
 		}
 		free(argv);

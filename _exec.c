@@ -9,29 +9,21 @@ void _execute(char **argv)
 {
 	pid_t child_pid;
 	int status;
-	char *cmd = NULL;
 
-	if (argv)
+	child_pid = fork();
+	if (child_pid == -1)
 	{
-		cmd = which_location(argv[0]);
-		if (cmd)
+		perror("Error:");
+	}
+	if (child_pid == 0)
+	{
+		if (execve(argv[0], argv, environ) == -1)
 		{
-			child_pid = fork();
-			if (child_pid == -1)
-			{
-				perror("Error:");
-			}
-			if (child_pid == 0)
-			{
-				if (execve(cmd, argv, environ) == -1)
-				{
-					perror("Error:");
-				}
-			}
-			else
-			{
-				wait(&status);
-			}
+			perror("Error:");
 		}
+	}
+	else
+	{
+		wait(&status);
 	}
 }
