@@ -11,6 +11,7 @@
 #include <sys/stat.h>
 
 extern char **environ;
+int _putchar (char c);
 
 char *_readline(void);
 char **_tokenize(char *line);
@@ -19,5 +20,6 @@ int _strlen(char *s);
 void handler(int sig);
 void _execute(char **argv);
 int _strcmp(char *s1, char *s2);
+void _puts(char *str);
 
 #endif

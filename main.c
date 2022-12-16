@@ -9,6 +9,7 @@
 int main(int argc, char **argv)
 {
 	char *buf = NULL;
+	int i = 0;
 
 	(void)argc;
 
@@ -25,11 +26,20 @@ int main(int argc, char **argv)
 		{
 			if (_strcmp(argv[0], "exit") == 0)
 			{
-				free(argv);
-				free(buf);
-				exit(0);
+				break;
 			}
-			_execute(argv);
+			else if (_strcmp(argv[0], "env") == 0)
+			{
+				while (environ[i] != NULL)
+				{
+					_puts(environ[i]);
+					i++;
+				}
+			}
+			else
+			{
+				_execute(argv);
+			}
 		}
 		free(argv);
 		free(buf);

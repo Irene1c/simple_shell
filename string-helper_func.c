@@ -37,3 +37,30 @@ int _strcmp(char *s1, char *s2)
 		return (*s1 - *s2);
 	}
 }
+/**
+ * _puts - prints a string to stdout
+ * @str: the string
+ * Return: nothing
+ */
+void _puts(char *str)
+{
+	int a = 0;
+
+	while (str[a] != '\0')
+	{
+		_putchar(str[a]);
+		a++;
+	}
+	_putchar('\n');
+}
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
