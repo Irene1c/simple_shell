@@ -20,7 +20,6 @@ void _execute(char **argv)
 		if (execve(argv[0], argv, environ) == -1)
 		{
 			perror("Error:");
-			exit(1);
 		}
 	}
 	else
