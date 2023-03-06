@@ -25,11 +25,11 @@ void _execute(char **argv)
 			{
 				if (execve(cmd, argv, environ) == -1)
 				{
-					perror("Error:");
+					exit(-1);
 				}
 				else
 				{
-					perror("Error:");
+					exit(-1);
 				}
 			}
 		}
